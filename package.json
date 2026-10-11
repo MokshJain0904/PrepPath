@@ -1,0 +1,20 @@
+{
+  "name": "preppath-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PrepPath - AI-Powered Placement & Skill-Preparation Planner & Tracker",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "install-all": "npm install && npm install --prefix server && npm install --prefix client",
+    "seed": "npm run seed --prefix server",
+    "test": "npm run test --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

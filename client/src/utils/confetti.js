@@ -1,0 +1,44 @@
+import confetti from 'canvas-confetti';
+
+export const triggerConfetti = () => {
+  // Fire multiple bursts of celebratory confetti
+  const count = 200;
+  const defaults = {
+    origin: { y: 0.7 },
+    zIndex: 9999,
+  };
+
+  function fire(particleRatio, opts) {
+    confetti({
+      ...defaults,
+      ...opts,
+      particleCount: Math.floor(count * particleRatio),
+    });
+  }
+
+  fire(0.25, {
+    spread: 26,
+    startVelocity: 55,
+    colors: ['#10b981', '#34d399', '#6ee7b7'],
+  });
+  fire(0.2, {
+    spread: 60,
+    colors: ['#8b5cf6', '#a78bfa', '#c4b5fd'],
+  });
+  fire(0.35, {
+    spread: 100,
+    decay: 0.91,
+    scalar: 0.8,
+    colors: ['#38bdf8', '#818cf8', '#f43f5e'],
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 25,
+    decay: 0.92,
+    scalar: 1.2,
+  });
+  fire(0.1, {
+    spread: 120,
+    startVelocity: 45,
+  });
+};
